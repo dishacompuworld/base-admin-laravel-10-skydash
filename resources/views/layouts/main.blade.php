@@ -225,7 +225,7 @@
   </div>
   <!-- container-scroller -->
 
-  <!-- plugins:js -->
+  <!-- plugins:js for toggle menues-->
   <script src="{{ asset('assets/vendors/js/vendor.bundle.base.js') }}"></script>
   <!-- endinject -->
   <!-- Plugin js for this page -->
