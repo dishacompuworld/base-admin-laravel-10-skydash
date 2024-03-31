@@ -1,7 +1,7 @@
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
     <ul class="nav">
       <li class="nav-item">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="dashboard">
           <i class="icon-grid menu-icon"></i>
           <span class="menu-title">Dashboard</span>
         </a>
@@ -14,9 +14,9 @@
         </a>
         <div class="collapse" id="ui-basic">
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item"> <a class="nav-link" href="/buttons">Buttons</a></li>
-            <li class="nav-item"> <a class="nav-link" href="/dropdowns">Dropdowns</a></li>
-            <li class="nav-item"> <a class="nav-link" href="/typography">Typography</a></li>
+            <li class="nav-item"> <a class="nav-link" href="buttons">Buttons</a></li>
+            <li class="nav-item"> <a class="nav-link" href="dropdowns">Dropdowns</a></li>
+            <li class="nav-item"> <a class="nav-link" href="typography">Typography</a></li>
           </ul>
         </div>
       </li>
@@ -28,7 +28,7 @@
         </a>
         <div class="collapse" id="form-elements">
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item"><a class="nav-link" href="/forms">Basic Elements</a></li>
+            <li class="nav-item"><a class="nav-link" href="forms">Basic Elements</a></li>
           </ul>
         </div>
       </li>
@@ -40,7 +40,7 @@
         </a>
         <div class="collapse" id="charts">
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item"> <a class="nav-link" href="/chart">ChartJs</a></li>
+            <li class="nav-item"> <a class="nav-link" href="chart">ChartJs</a></li>
           </ul>
         </div>
       </li>
@@ -52,7 +52,7 @@
         </a>
         <div class="collapse" id="tables">
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item"> <a class="nav-link" href="/table">Basic table</a></li>
+            <li class="nav-item"> <a class="nav-link" href="table">Basic table</a></li>
           </ul>
         </div>
       </li>
@@ -64,7 +64,7 @@
         </a>
         <div class="collapse" id="icons">
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item"> <a class="nav-link" href="/icons">Mdi icons</a></li>
+            <li class="nav-item"> <a class="nav-link" href="icons">Mdi icons</a></li>
           </ul>
         </div>
       </li>
@@ -76,8 +76,8 @@
         </a>
         <div class="collapse" id="auth">
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item"> <a class="nav-link" href="/login"> Login </a></li>
-            <li class="nav-item"> <a class="nav-link" href="/register"> Register </a></li>
+            <li class="nav-item"> <a class="nav-link" href="login"> Login </a></li>
+            <li class="nav-item"> <a class="nav-link" href="register"> Register </a></li>
           </ul>
         </div>
       </li>
@@ -89,8 +89,8 @@
         </a>
         <div class="collapse" id="error">
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item"> <a class="nav-link" href="/erro404"> 404 </a></li>
-            <li class="nav-item"> <a class="nav-link" href="/erro500"> 500 </a></li>
+            <li class="nav-item"> <a class="nav-link" href="erro404"> 404 </a></li>
+            <li class="nav-item"> <a class="nav-link" href="erro500"> 500 </a></li>
           </ul>
         </div>
       </li>
