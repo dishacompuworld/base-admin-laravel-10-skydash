@@ -7,16 +7,15 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+        <a class="nav-link" data-toggle="collapse" href="#servers" aria-expanded="false" aria-controls="servers">
           <i class="icon-layout menu-icon"></i>
-          <span class="menu-title">UI Elements</span>
+          <span class="menu-title">Servers</span>
           <i class="menu-arrow"></i>
         </a>
-        <div class="collapse" id="ui-basic">
+        <div class="collapse" id="servers">
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item"> <a class="nav-link" href="buttons">Buttons</a></li>
-            <li class="nav-item"> <a class="nav-link" href="dropdowns">Dropdowns</a></li>
-            <li class="nav-item"> <a class="nav-link" href="typography">Typography</a></li>
+            <li class="nav-item"> <a class="nav-link" href="addserver">Add Server</a></li>
+            <li class="nav-item"> <a class="nav-link" href="server">View Servers</a></li>
           </ul>
         </div>
       </li>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ServerController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -64,3 +65,10 @@ Route::get('/erro404', function () {
 Route::get('/erro500', function () {
     return view('pages.error-pages.500.index');
 });
+
+Route::get('/addserver', function () {
+    return view('pages.server.index');
+});
+
+
+Route::resource('server', ServerController::class);

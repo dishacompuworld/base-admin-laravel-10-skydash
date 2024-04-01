@@ -1,0 +1,30 @@
+
+[
+    {
+        "name" : "Main Server",
+        "mip" : "45.249.42.130",
+        "ip2" : "103.102.145.14",
+        "shortname" : "main",
+        "username" : "rajesh",
+        "password" : "microtek",
+        "enable" : 1
+    },
+    {
+        "name" : "Local Server",
+        "mip" : "103.248.30.218",
+        "ip2" : "103.102.144.243",
+        "shortname" : "local",
+        "username" : "rajesh",
+        "password" : "microtek",
+        "enable" : 1
+    },
+    {
+        "name" : "Cloudnet Server",
+        "mip" : "103.248.30.221",
+        "ip2" : "103.102.144.245",
+        "shortname" : "cloudnet",
+        "username" : "rajesh",
+        "password" : "microtek",
+        "enable" : 1
+    }
+]
