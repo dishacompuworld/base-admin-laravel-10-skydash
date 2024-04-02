@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('shortname')->unique();
             $table->string('username');
             $table->string('password');
-            $table->boolean('enable');
+            $table->boolean('enable')->default('1');
         });
     }
 

@@ -14,7 +14,7 @@
         </a>
         <div class="collapse" id="servers">
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item"> <a class="nav-link" href="addserver">Add Server</a></li>
+            <li class="nav-item"> <a class="nav-link" href="server/create">Add Server</a></li>
             <li class="nav-item"> <a class="nav-link" href="server">View Servers</a></li>
           </ul>
         </div>
