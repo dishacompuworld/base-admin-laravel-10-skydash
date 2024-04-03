@@ -39,12 +39,19 @@ class ServerController extends Controller
             'name' => 'required',
             'sname' => 'required',
             'ip'=> 'required|ipv4',
-            'ip2' => 'required|ipv4',
             'susername' => 'required',
             'pass' => 'required'
 
-        ]);
+        ],
+        [
+            'name.required' => 'Servername is Required',
+            'sname.required' => 'Short name is Required',
+            'ip.ipv4' => 'IP is Required in IPV4 format',
+            'ip.required' => 'IP address is Required',
+            'susername.required' => 'Server Login username is Required',
+            'pass.required' => 'Server password is Required'
 
+        ]);
 
         $server = new Server;
 
@@ -100,7 +107,23 @@ class ServerController extends Controller
     {
 
 
-        // return $request;
+        $request->validate([
+            'name' => 'required',
+            'sname' => 'required',
+            'ip'=> 'required|ipv4',
+            'susername' => 'required',
+            'pass' => 'required'
+
+        ],
+        [
+            'name.required' => 'Servername is Required',
+            'sname.required' => 'Short name is Required',
+            'ip.ipv4' => 'IP is Required in IPV4 format',
+            'ip.required' => 'IP address is Required',
+            'susername.required' => 'Server Login username is Required',
+            'pass.required' => 'Server password is Required'
+
+        ]);
 
         $server = Server::find($server->id);
 

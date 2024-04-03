@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PPPoEController;
 use App\Http\Controllers\ServerController;
 use Illuminate\Support\Facades\Route;
 
@@ -72,3 +73,6 @@ Route::get('/addserver', function () {
 
 
 Route::resource('server', ServerController::class);
+
+Route::get('pppoe/callserver', [PPPoEController::class, 'callserver'])->name('pppoe.callserver');
+Route::get('pppoe/active', [PPPoEController::class, 'active'])->name('pppoe.active');

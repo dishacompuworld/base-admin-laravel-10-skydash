@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('mip');
-            $table->string('ip2');
+            $table->string('ip2')->nullable();
             $table->string('shortname')->unique();
             $table->string('username');
             $table->string('password');

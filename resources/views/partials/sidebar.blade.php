@@ -14,11 +14,26 @@
       </a>
       <div class="collapse" id="servers">
         <ul class="nav flex-column sub-menu">
-          <li class="nav-item"> <a class="nav-link" href="{{ route('server.create')}}">Add Server</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{{ route('server.create')}}">Add New Server</a></li>
           <li class="nav-item"> <a class="nav-link" href="{{ route('server.index')}}">View Servers</a></li>
         </ul>
       </div>
     </li>
+    <li class="nav-item">
+        <a class="nav-link" data-toggle="collapse" href="#microtik" aria-expanded="false" aria-controls="microtik">
+          <i class="icon-columns menu-icon"></i>
+          <span class="menu-title">Microtik</span>
+          <i class="menu-arrow"></i>
+        </a>
+        <div class="collapse" id="microtik">
+          <ul class="nav flex-column sub-menu">
+            <li class="nav-item"><a class="nav-link" href="{{ route('pppoe.callserver')}}">Active Users</a></li>
+          </ul>
+          <ul class="nav flex-column sub-menu">
+            <li class="nav-item"><a class="nav-link" href="{{ route('pppoe.active')}}">Active Users</a></li>
+          </ul>
+        </div>
+      </li>
     <li class="nav-item">
       <a class="nav-link" data-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
         <i class="icon-columns menu-icon"></i>
