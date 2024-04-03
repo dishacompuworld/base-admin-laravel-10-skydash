@@ -20,7 +20,7 @@ Route::get('/', function () {
 
 Route::get('/dashboard', function () {
     return view('dashboard.index');
-});
+})->name('dashboard');
 
 Route::get('/forms', function () {
     return view('pages.forms.index');
