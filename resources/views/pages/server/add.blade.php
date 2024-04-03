@@ -17,27 +17,33 @@
                 @csrf
               <div class="form-group">
                 <label>Server Name</label>
-                <input type="text" class="form-control" id="exampleInputUsername1" name="name">
+                <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" value="{{ old('name') }}">
+                <span class="text-danger"> @error('name') {{ $message }} @enderror </span>
               </div>
               <div class="form-group">
                 <label>Short Name</label>
-                <input type="text" class="form-control" id="exampleInputUsername1" name="sname">
+                <input type="text" class="form-control @error('sname') is-invalid @enderror" id="sname" name="sname" value="{{ old('sname') }}">
+                <span class="text-danger"> @error('sname') {{ $message }} @enderror </span>
               </div>
               <div class="form-group">
                 <label>IP Address</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" name="ip">
+                <input type="text" class="form-control @error('ip') is-invalid @enderror" id="ip" name="ip"  value="{{ old('ip') }}">
+                <span class="text-danger"> @error('ip') {{ $message }} @enderror </span>
               </div>
               <div class="form-group">
                 <label>Secondary IP Address</label>
-                <input type="text" class="form-control" id="exampleInputPassword1" name="ip2">
+                <input type="text" class="form-control @error('ip2') is-invalid @enderror" id="ip2" name="ip2"  value="{{ old('ip2') }}">
+                <span class="text-danger"> @error('ip2') {{ $message }} @enderror </span>
               </div>
               <div class="form-group">
                 <label>Server Username</label>
-                <input type="text" class="form-control" id="exampleInputConfirmPassword1" name="susername">
+                <input type="text" class="form-control @error('susername') is-invalid @enderror" id="susername" name="susername"  value="{{ old('susername') }}">
+                <span class="text-danger"> @error('susername') {{ $message }} @enderror </span>
               </div>
               <div class="form-group">
                 <label>Password</label>
-                <input type="password" class="form-control" id="exampleInputConfirmPassword1" name="pass">
+                <input type="password" class="form-control @error('pass') is-invalid @enderror" id="pass" name="pass"  value="{{ old('pass') }}">
+                <span class="text-danger"> @error('pass') {{ $message }} @enderror </span>
               </div>
               <div class="form-check form-check-flat form-check-primary">
                 <label class="form-check-label">

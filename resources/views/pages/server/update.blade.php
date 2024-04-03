@@ -8,7 +8,7 @@
 @section('content')
 <div class="content-wrapper">
     <div class="row">
-      <div class="col-6 grid-margin stretch-card">
+      <div class="col-4 grid-margin stretch-card">
         <div class="card">
           <div class="row">
             <div class="col-md-12">
@@ -46,7 +46,7 @@
                   <input type="checkbox" class="form-check-input" {{ $servers->enable=="1"? 'checked':'' }} name="enable"> Enable
                 </label>
               </div>
-              <button type="submit" class="btn btn-primary mr-2">Submit</button>
+              <button type="submit" class="btn btn-primary btn-sm">Submit</button>
             </form>
             <div>
                 <form action="{{ route('server.destroy', $servers->id )}}" method="POST">
@@ -54,6 +54,7 @@
                     @method('DELETE')
                     <button type="submit" class="btn btn-danger btn-sm">Delete</button>
                 </form>
+                <a href="{{ route('server.index') }}" class="btn btn-primary btn-sm">Back</a>
             </div>
               </div>
             </div>
@@ -61,7 +62,6 @@
         </div>
       </div>
     </div>
-    <a href="">Back</a>
   </div>
 
 @endsection

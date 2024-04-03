@@ -35,6 +35,16 @@ class ServerController extends Controller
 
         // return $request;
 
+        $request->validate([
+            'name' => 'required',
+            'sname' => 'required',
+            'ip'=> 'required|ipv4',
+            'ip2' => 'required|ipv4',
+            'susername' => 'required',
+            'pass' => 'required'
+
+        ]);
+
 
         $server = new Server;
 

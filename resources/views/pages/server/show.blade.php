@@ -7,10 +7,10 @@
 @section('content')
 <div class="content-wrapper">
     <div class="row">
-      <div class="col-6 grid-margin stretch-card">
+      <div class="col-4 grid-margin stretch-card">
         <div class="card">
           <div class="row">
-            <div class="col-md-18">
+            <div class="col-md-12">
               <div class="card-body">
                 <h4 class="card-title">Server Details</h4>
                 <table class="table-striped">
@@ -23,15 +23,13 @@
                     </tr>
                     {{-- @endforeach --}}
                 </table>
-
-
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <a href="">Back</a>
+    <a href="{{ route('server.index') }}" class="btn btn-primary mr-2">Back</a>
   </div>
 
 @endsection
