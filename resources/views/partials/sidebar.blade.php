@@ -27,9 +27,6 @@
         </a>
         <div class="collapse" id="microtik">
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item"><a class="nav-link" href="{{ route('pppoe.callserver')}}">Active Users</a></li>
-          </ul>
-          <ul class="nav flex-column sub-menu">
             <li class="nav-item"><a class="nav-link" href="{{ route('pppoe.active')}}">Active Users</a></li>
           </ul>
         </div>

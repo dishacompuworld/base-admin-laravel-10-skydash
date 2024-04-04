@@ -203,80 +203,90 @@ class PPPoEController extends Controller
 		// return redirect()->route('pppoe.secret');
 	}
 
-    public function delete($id)
+    public function delete(Request $request)
 	{
-		// $ip = session()->get('ip');
-		// $user = session()->get('user');
-		// $password = session()->get('password');
-		// $API = new RouterosAPI();
-		// $API->debug = false;
 
-		// if ($API->connect($ip, $user, $password)) {
+        // echo  $request->id . ' '. $request->sid;
 
-		// 	$API->comm('/ppp/secret/remove', [
-		// 		'.id' => '*' . $id
-		// 	],);
+        $iid = $request->get('server');
+        $servers = Server::where('enable','1')->get();
+        $activeu=[];
 
-		// 	// Alert::success('Success', 'Selamat anda Berhasil menghapus secret PPPoE');
-		// 	return redirect('pppoe/secret');
-		// } else {
+        if($iid){
+            
+            $serveriid = Server::find($iid);
 
-		// 	return redirect('failed');
-		// }
+            $ip = $serveriid->mip;
+            $user = $serveriid->username;
+            $password = $serveriid->password;
+
+            $API = new RouterosAPI();
+            $API->debug = false;
+
+            if ($API->connect($ip, $user, $password)) {
+
+                // $activeu = $API->comm('/ppp/active/print');
+
+                $API->comm('/ppp/secret/remove', [
+                    '.id' => $request->id
+                ],);
+
+                // return $request->id;
+                
+                // return view('pages.PPPoE.active', compact('servers','activeu','iid'))
+                //     ->with('msg', 'User Deleted Successfully');
+
+            }else{
+
+                // return view('pages.PPPoE.active', compact('servers','activeu','iid'))
+                // ->with('msg', 'User not deleted');
+            }
+            
+        }else{
+            // return view('pages.PPPoE.active', compact('servers','activeu','iid'));
+        }
 	}
 
-    public function callserver(){
+    // public function callserver(){
 
-        $servers = Server::all();
+    //     $servers = Server::where('enable','1')->get();
+    //     $activeu=[];
+    //     $iid=0;
 
-        return view('pages.PPPoE.active', compact('servers'));
-    }
+    //     // return view('pages.PPPoE.active', compact('servers'));
+    //     return view('pages.PPPoE.active', compact('servers','activeu','iid'));
+    // }
 
 
 
     public function active(Request $request)
 	{
-
+        
         $iid = $request->get('server');
-        $servers = Server::all();
+        $servers = Server::where('enable','1')->get();
+        $activeu=[];
 
-        $serveriid = Server::find($iid);
+        if($iid){
+            
+            $serveriid = Server::find($iid);
 
-        $ip = $serveriid->mip;
-		$user = $serveriid->username;
-		$password = $serveriid->password;
+            $ip = $serveriid->mip;
+            $user = $serveriid->username;
+            $password = $serveriid->password;
 
-        // echo $ip . " " . $user ." " . $password;
+            $API = new RouterosAPI();
+            $API->debug = false;
 
-		$API = new RouterosAPI();
-		$API->debug = false;
+            if ($API->connect($ip, $user, $password)) {
 
-		if ($API->connect($ip, $user, $password)) {
+                $activeu = $API->comm('/ppp/active/print');
+                
+                return view('pages.PPPoE.active', compact('servers','activeu','iid'));
 
-			$activeusers = $API->comm('/ppp/active/print');
-
-            //  return $activeusers;
-
-			// $data = [
-			// 	'totalsecretactive' => count($activeusers),
-			// 	'active' => $activeusers,
-			// ];
-
-            // return $data;
-
-			// return view('pppoe.active', $data);
-            // return view('pages.PPPoE.active', compact('servers','activeusers','iid'));
-
-            return view('pages.PPPoE.active')
-            ->with('activeusers',$activeusers)
-            ->with('id',$iid)
-            ->with('servers',$servers);
-
-
-		// } else {
-
-		// 	return redirect('failed');
-		 }
+            }
+        }else{
+            return view('pages.PPPoE.active', compact('servers','activeu','iid'));
+        }
 	}
 }
 
