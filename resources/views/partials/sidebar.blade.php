@@ -20,6 +20,18 @@
       </div>
     </li>
     <li class="nav-item">
+        <a class="nav-link" data-toggle="collapse" href="#stats" aria-expanded="false" aria-controls="stats">
+          <i class="icon-ban menu-icon"></i>
+          <span class="menu-title">Server Stats</span>
+          <i class="menu-arrow"></i>
+        </a>
+        <div class="collapse" id="stats">
+          <ul class="nav flex-column sub-menu">
+            <li class="nav-item"> <a class="nav-link" href="{{ route('stats.index')}}"> Server Stats </a></li>
+          </ul>
+        </div>
+      </li>
+    <li class="nav-item">
         <a class="nav-link" data-toggle="collapse" href="#microtik" aria-expanded="false" aria-controls="microtik">
           <i class="icon-columns menu-icon"></i>
           <span class="menu-title">Microtik</span>

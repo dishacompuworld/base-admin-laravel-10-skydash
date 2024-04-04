@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\PPPoEController;
 use App\Http\Controllers\ServerController;
+use App\Http\Controllers\ServerStats;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -76,4 +77,10 @@ Route::resource('server', ServerController::class);
 
 Route::get('pppoe/active', [PPPoEController::class, 'active'])->name('pppoe.active');
 
-Route::post('pppoe/secret/delete/{id}', [PPPoEController::class, 'delete'])->name('pppoe.delete');
+Route::post('pppoe/delete/{id}', [PPPoEController::class, 'delete'])->name('pppoe.delete');
+
+
+Route::get('stats', [ServerStats::class, 'index'])->name('stats.index');
+
+Route::get('stats/{id}', [ServerController::class, 'show'])->name('stats.show');
+
