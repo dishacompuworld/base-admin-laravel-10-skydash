@@ -60,7 +60,7 @@
                     @method('DELETE')
                     <button type="submit" class="btn btn-danger btn-sm">Delete</button>
                 </form>
-                <a href="{{ route('server.index') }}" class="btn btn-primary btn-sm">Back</a>
+                <a href="{{ URL::previous() }}" class="btn btn-primary btn-sm">Back</a>
             </div>
               </div>
             </div>

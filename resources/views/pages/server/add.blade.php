@@ -59,7 +59,7 @@
         </div>
       </div>
     </div>
-    <a href="">Back</a>
+    <a href="{{ URL::previous() }}" class="btn btn-light">Back</a>
   </div>
 
 @endsection

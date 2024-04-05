@@ -1,3 +1,13 @@
+@php
+    if($data){
+        $fmemory = floatval($data['freememory'])/1024/1024;
+        $tmemory = floatval($data['totalmemory'])/1024/1024;
+
+        $fhdd = floatval($data['freehdd'])/1024/1024;
+        $thdd = floatval($data['totalhdd'])/1024/1024;
+    }
+@endphp
+
 @extends('layouts.main')
 
 @section('title')
@@ -9,11 +19,10 @@ All Active Users
     <div class="row">
       <div class="col-12 grid-margin stretch-card">
         <div class="card">
-          <div class="row">
             <div class="col-md-12">
               <div class="card-body">
-                <h3 class="card-title">Server Statics</h3>
-                    <div>
+                <h3 class="card-title">Server Statistics</h3>
+
                     {{-- @if ($msg) --}}
                         {{-- <label class="badge badge-success"> {{ $msg }}</lable> --}}
                     {{-- @endif --}}
@@ -39,39 +48,28 @@ All Active Users
                           </form>
                       </div>
                     </div>
-                </div>
-
                 @if ($data)
-                    <div class="form-group col-md-12">
-                        <div>
-                            <h4 class="card-title">Server Identity : {{ $data['identity'] }}</h4>
-                        </div>
-                        <div>
-                            <h4 class="card-title">Server Model : {{ $data['model'] }}</h4>
-                        </div>
-                        <div>
-                            <h4 class="card-title">Server version : {{ $data['version'] }}</h4>
-                        </div>
-                        <div>
-                            <h4 class="card-title">Server uptime : {{ $data['uptime'] }}</h4>
-                        </div>
-                        <div>
-                            <h4 class="card-title">Server freememory : {{ $data['freememory'] }}</h4>
-                        </div>
-                        <div>
-                            <h4 class="card-title">Server freehdd : {{ $data['freehdd'] }}</h4>
-                        </div>
-                        <div>
-                            <h4 class="card-title">Server Active users : {{ $data['active'] }}</h4>
-                        </div>
-                  </div>
-                  @endif
-              </div>
-            </div>
+                <div class="form-group col-md-12">
+                    <div class=" table table-responsive">
+                        <table class="table-hover">
+                            <tr><th>Server Identity :</th><td>{{ $data['identity'] }}</td></tr>
+                            <tr><th>Server Model :</th><td>{{ $data['model'] }}</td></tr>
+                            <tr><th>Server Factory version :</th><td>{{ $data['factorysoftware'] }}</td></tr>
+                            <tr><th>Server Current version :</th><td>{{ $data['version'] }} ({{ $data['buildtime'] }})</td></tr>
+                            <tr><th>Server uptime :</th><td>{{ $data['uptime'] }}</td></tr>
+                            <tr><th>Server memory free/total :</th><td>{{ $fmemory }} / {{ $tmemory }} MB</td></tr>
+                            <tr><th>Server hdd free/total :</th><td>{{ $fhdd }} / {{ $thdd }} MB</td></tr>
+                            <tr><th>Server Active users :</th><td><a href="{{ route('pppoe.active', ['server'=>$iid])}}">{{ $data['active'] }}</a></td></tr>
+                        </table>
+                    </div>
+                </div>
+                @endif
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
+
 
 @endsection

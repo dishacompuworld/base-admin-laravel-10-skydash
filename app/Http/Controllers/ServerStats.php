@@ -28,9 +28,9 @@ class ServerStats extends Controller
 
             if ($API->connect($ip, $user, $password)) {
 
-                $hotspotactive = $API->comm('/ip/hotspot/active/print');
+                // $hotspotactive = $API->comm('/ip/hotspot/active/print');
                 $resource = $API->comm('/system/resource/print');
-                $secret = $API->comm('/ppp/secret/print');
+                // $secret = $API->comm('/ppp/secret/print');
                 $active = $API->comm('/ppp/active/print');
                 // $interface = $API->comm('/interface/ethernet/print');
                 $routerboard = $API->comm('/system/routerboard/print');
@@ -38,18 +38,24 @@ class ServerStats extends Controller
 
 
                 $data = [
-                    'totalsecret' => count($secret),
-                    'totalhotspot' => count($hotspotactive),
-                    'hotspotactive' => count($hotspotactive),
+                    // 'totalsecret' => count($secret),
+                    // 'totalhotspot' => count($hotspotactive),
+                    // 'hotspotactive' => count($hotspotactive),
                     'active' => count($active),
                     'cpu' => $resource[0]['cpu-load'],
                     'uptime' => $resource[0]['uptime'],
                     'version' => $resource[0]['version'],
                     'boardname' => $resource[0]['board-name'],
                     'freememory' => $resource[0]['free-memory'],
+                    'totalmemory' => $resource[0]['total-memory'],
                     'freehdd' => $resource[0]['free-hdd-space'],
+                    'totalhdd' => $resource[0]['total-hdd-space'],
                     'model' => $routerboard[0]['model'],
                     'identity' => $identity[0]['name'],
+                    'buildtime' => $resource[0]['build-time'],
+                    'factorysoftware' => $resource[0]['factory-software'],
+
+
                 ];
 
                 // return $data;

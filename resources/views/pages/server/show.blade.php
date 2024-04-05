@@ -29,7 +29,7 @@
         </div>
       </div>
     </div>
-    <a href="{{ route('server.index') }}" class="btn btn-primary mr-2">Back</a>
+    <a href="{{ URL::previous() }}" class="btn btn-primary mr-2">Back</a>
   </div>
 
 @endsection
